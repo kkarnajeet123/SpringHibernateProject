@@ -1,0 +1,24 @@
+#main-body{
+	border:1px solid black; 
+	width: 500px; 
+	height:550; 
+	background-color: cyan;
+	margin:20px 0px 0px 300px 
+} 
+
+label{
+	font-weight: bold;
+	font-style:  italic;
+}
+
+.sp{
+	margin:20px;
+	padding:15px
+}
+table {
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 1px solid black;
+}

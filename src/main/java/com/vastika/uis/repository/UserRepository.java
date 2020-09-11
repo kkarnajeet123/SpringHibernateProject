@@ -11,5 +11,6 @@ public interface UserRepository {
 	void deleteUserInfo(int id);
 	User getUserInfoById(int id);
 	List<User> getAllUserInfo();
+	User getUserInfoByUsername(String username);
 	
 }

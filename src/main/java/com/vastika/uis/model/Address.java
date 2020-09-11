@@ -2,11 +2,9 @@ package com.vastika.uis.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.Data;
 
@@ -21,6 +19,5 @@ public class Address {
 	private int addressId;
 	private String city;
 	private String country;
-	@ManyToOne (fetch=FetchType.EAGER)
-	private User user;
+	
 }

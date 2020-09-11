@@ -17,7 +17,12 @@ public class UserController {
 	
 	@Autowired
 	public UserService userService; 
-	
+	/*
+	@RequestMapping("/")
+	public String homePage() {
+		return "Home";
+	}
+	*/
 	@RequestMapping ("/user_form")
 	public String getUserForm() {
 		
@@ -49,8 +54,8 @@ public class UserController {
 		
 	}
 	
-	
-	@RequestMapping(value= {"/","/user_list"}, method=RequestMethod.GET)
+	@RequestMapping(value= "/user_list", method=RequestMethod.GET)
+	//@RequestMapping(value= {"/","/user_list"}, method=RequestMethod.GET)
 	//when we are sending data to view then we need to pass Model model
 	public String getAllUser(Model model) {
 		model.addAttribute("users", userService.getAllUserInfo());
