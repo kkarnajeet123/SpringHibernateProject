@@ -5,27 +5,14 @@
 <head>
 	<meta charset="ISO-8859-1">
 		<title>LoginPage</title>
+		<link rel="stylesheet" href="resources/css/profile.css" >
 			<%@ include file ="header.jsp" %>
 </head>
 	<body>
-		<div class ="container">
+		<div style="align:right" class ="container float right">
 		<h1>Welcome !!!</h1>
 			<h4>Please Select your options</h4>
-				<!--  
-				<div>
-					<label>Username</label> <input type ="text" name="username"/>
-				</div>
-				<div>
-					<label>Password</label> <input type="password" name="password"/>
-				</div>
-				<div>
-					<form action = "user_list" method="get"> <input type="submit" value="Submit"/ class="btn btn-success" ></form>
-				</div>
-				<div>
-					<form action="user_form" method="post"><input type="submit" value="Register"/ class ="btn btn-primary"></form>
-				</div>
-				
-				-->
+			
 		</div>
 	</body>
 </html>

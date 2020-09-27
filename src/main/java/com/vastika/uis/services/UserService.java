@@ -10,4 +10,7 @@ public interface UserService {
 	void deleteUserInfo(int id);
 	User getUserInfoById(int id);
 	List<User> getAllUserInfo();
+	User getUserInfoByEmail(String email);
+	User getUserInfoByUsername(String username);
+	//void updateUserInfoById(User user, String role);
 }

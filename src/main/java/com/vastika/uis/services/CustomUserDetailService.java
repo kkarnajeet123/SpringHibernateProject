@@ -39,6 +39,7 @@ public class CustomUserDetailService implements UserDetailsService {
 
 	}
 	
+	//this will give us the added list of users which have granted authorities.
 	public Collection<? extends GrantedAuthority>getGrantedAuthorities (String role){
 		List<SimpleGrantedAuthority> authList = new ArrayList<>();
 		authList.add(new SimpleGrantedAuthority(role));

@@ -9,6 +9,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.vastika.uis.model.Role;
 import com.vastika.uis.model.User;
 import com.vastika.uis.util.HibernateUtil;
 
@@ -67,5 +68,14 @@ public class UserRepositoryImpl implements UserRepository {
 		criteria.add(Restrictions.eq("userName", username));
 		return (User)criteria.uniqueResult();
 	}
+
+	@Override
+	public User getUserInfoByEmail(String email) {
+		Session session = HibernateUtil.getSession(sessionFactory);
+		Criteria criteria = session.createCriteria(User.class);
+		criteria.add(Restrictions.eq("email", email));
+		return (User)criteria.uniqueResult();
+	}
+
 
 }

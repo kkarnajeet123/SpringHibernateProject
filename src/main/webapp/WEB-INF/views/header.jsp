@@ -6,10 +6,15 @@
 
 
 <!-- to print our username in header -->
-<security:authentication property="principal" var="user"/>
+<security:authentication property="principal" var="u"/>
+
+<style type="text/css">
+nav a { color: black; font-size:18px; font-weight: bold;}
+
+</style>
 
 <!-- From here navbar started -->
-<nav class="navbar navbar-expand-lg navbar-inverse bg-dark">
+<nav class="navbar navbar-expand-lg navbar-inverse bg-light">
   <a class="navbar-brand" href="home_page">User Info System</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" 
   data-target="#navbarSupportedContent" 
@@ -17,12 +22,12 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="home_page">Home <span class="sr-only">(current)</span></a>
       </li>
-      <sec:authorize access="hasAnyRole('ROLE_ADMIN') and isAuthenitcated()">
+      <sec:authorize access="hasAnyRole('ROLE_ADMIN',('ROLE_USER')) and isAuthenitcated()">
       <li class="nav-item">
         <a class="nav-link" href="task_list">Task</a>
       </li>
@@ -35,21 +40,18 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" 
         id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          ${user.username}
+          ${u.username}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="profile">Profile</a>
+          <a class="dropdown-item" href="resetpassword">Reset Password</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="logout">Logout</a>
+          <a class="dropdown-item" href="logout" >Logout</a>
         </div>
       </li>
      
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+   
   </div>
 </nav>
 <!-- till here navbar  -->
